@@ -7,7 +7,7 @@ function App() {
   const BOARD_SIZE = 15;
   const INITIAL_SNAKE = [{ x: 7, y: 7 }];
   const INITIAL_FOOD = { x: 5, y: 5 };
-  const GAME_SPEED = 150; // milliseconds between moves
+  const GAME_SPEED = 170; // milliseconds between moves
 
   const [snake, setSnake] = useState<Coordinate[]>(INITIAL_SNAKE);
   const [food, setFood] = useState<Coordinate>(INITIAL_FOOD);
@@ -137,7 +137,12 @@ function App() {
 
   return (
     <div className="game-container">
-      <h1>Snake Game</h1>
+      <header className="game-header">
+        <h1>Snake Game</h1>
+        <div className="author-info">
+          <p>Made by Sarthak | <a href="https://github.com/sarthakology" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </div>
+      </header>
       <div className="score">Score: {score}</div>
       <GameBoard
         snake={snake}
